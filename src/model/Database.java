@@ -36,10 +36,10 @@ import java.sql.SQLException;
 
 public class Database{
 
-    private static String hostname = "192.168.64.2"; /*localhost*/
+    private static String hostname = "localhost";
     private static String user = "root";
     private static String password = "";
-    private static String database = "pjava";
+    private static String database = "todoapp";
 
     public static Connection CONNECTION = null;
 

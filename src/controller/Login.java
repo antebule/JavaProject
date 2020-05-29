@@ -6,44 +6,58 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
+import model.User;
 
 public class Login {
-    @FXML
-    Button prijaviSeBtn;
+    public static User loggedInUser;
 
     @FXML
-    TextField korisnickoImeTxt;
+    Button loginBtn;
 
     @FXML
-    TextField lozinkaTxt;
+    TextField emailTxt;
 
     @FXML
-    Label greskaLbl;
+    TextField passwordTxt;
 
     @FXML
-    Label uspjehLbl;
+    Label errorLbl;
 
     @FXML
-    public void prijaviSe(ActionEvent ev){
-        String korisnickoIme = this.korisnickoImeTxt.getText().toString();
-        String lozinka = this.lozinkaTxt.getText().toString();
+    Label successLbl;
 
-        if (korisnickoIme.equals("") || lozinka.equals("")){
-            greskaLbl.setVisible(true);
-            uspjehLbl.setVisible(false);
+    @FXML
+    public void login(ActionEvent ev){
+        // getting data from TextFields
+        String email = this.emailTxt.getText();
+        String password = this.passwordTxt.getText();
+
+        // checking data
+        if (email.equals("") || password.equals("")){
+            errorLbl.setVisible(true);
+            successLbl.setVisible(false);
         } else {
-            greskaLbl.setVisible(false);
-            uspjehLbl.setVisible(true);
+            errorLbl.setVisible(false);
+            successLbl.setVisible(true);
 
             try {
-                Main.showWindow(
-                        getClass(),
-                        "../view/Admin.fxml",
-                        "Dobrodošli u administraciju", 600, 400
-                );
-            } catch (IOException e) {
+                // storing logged user
+                loggedInUser = User.login(email, password);
+
+                if(loggedInUser != null){
+                    Main.showWindow(
+                            getClass(),
+                            "../view/Home.fxml",
+                            "Welcome to Home page", 600, 350
+                    );
+                } else {
+                    // showing proper message
+                    errorLbl.setText("Enter correct user data");
+                    errorLbl.setVisible(true);
+                    successLbl.setVisible(false);
+                }
+            } catch (Exception e) {
+                System.out.println("An error occurred " + e.getMessage());
                 e.printStackTrace();
             }
         }

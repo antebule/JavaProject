@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="214.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="134.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.0" minWidth="10.0" prefWidth="466.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="75.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="535.0" minWidth="10.0" prefWidth="318.0" />
   </columnConstraints>
   <rowConstraints>
       <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
@@ -19,32 +18,32 @@
     <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="Unesite korisničko ime" GridPane.rowIndex="1">
+      <Label text="Email" GridPane.rowIndex="1">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding></Label>
-      <Label text="Unesite lozinku" GridPane.rowIndex="2">
+      <Label text="Password" GridPane.rowIndex="2">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding></Label>
-      <TextField fx:id="korisnickoImeTxt" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextField fx:id="emailTxt" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></TextField>
-      <TextField fx:id="lozinkaTxt" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <TextField fx:id="passwordTxt" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></TextField>
-      <Button fx:id="prijaviSeBtn" mnemonicParsing="false" onAction="#prijaviSe" text="Prijavi se" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#login" text="Log In" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin></Button>
-      <Label text="Dobrodošli na sustav" GridPane.columnIndex="1">
+      <Label fx:id="successLbl" text="Welcome to system" GridPane.columnIndex="1">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="greskaLbl" text="Molimo unesite vaše korisničke podatke" textFill="RED" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Label fx:id="errorLbl" text="Please enter correct user data" textFill="RED" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -52,7 +51,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </Label>
-      <Label fx:id="uspjehLbl" text="Uspješno ste unijeli podatke" textFill="#0f8d33" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Label fx:id="uspjehLbl" text="You have successfully entered the data" textFill="#0f8d33" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
