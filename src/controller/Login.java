@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.scene.control.PasswordField;
 import main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ public class Login {
     TextField emailTxt;
 
     @FXML
-    TextField passwordTxt;
+    PasswordField passwordTxt;
 
     @FXML
     Label errorLbl;
