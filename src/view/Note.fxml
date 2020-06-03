@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Note">
+   <children>
+      <TextField fx:id="titleText" layoutX="43.0" layoutY="42.0" prefHeight="34.0" prefWidth="350.0" promptText="Enter title here..." />
+      <TextArea fx:id="noteTextArea" layoutX="43.0" layoutY="92.0" prefHeight="200.0" prefWidth="350.0" promptText="Your note goes here..." wrapText="true" />
+      <Button fx:id="saveBtn" layoutX="154.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveNoteToDatabase" prefHeight="25.0" prefWidth="52.0" text="Save" />
+      <Button fx:id="cancelBtn" layoutX="222.0" layoutY="309.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <ChoiceBox fx:id="categoryChoiceBox" layoutX="413.0" layoutY="47.0" prefWidth="150.0" />
+      <Label layoutX="418.0" layoutY="95.0" text="Add new category:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="categoryNameTxt" layoutX="415.0" layoutY="123.0" promptText="category name..." />
+      <Button layoutX="470.0" layoutY="157.0" mnemonicParsing="false" onAction="#addNewCategory" prefHeight="25.0" prefWidth="94.0" text="Add category" />
+   </children>
+</AnchorPane>

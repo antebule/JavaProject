@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Favorites">
+   <children>
+      <TableView fx:id="todosTableView" layoutX="55.0" layoutY="78.0" prefHeight="200.0" prefWidth="254.0">
+        <columns>
+          <TableColumn fx:id="titleTblCol" prefWidth="117.0" text="Title" />
+          <TableColumn fx:id="typeTblCol" prefWidth="60.0" text="Type" />
+            <TableColumn fx:id="categoryTblCol" prefWidth="76.0" text="Category" />
+        </columns>
+      </TableView>
+      <Button fx:id="deleteBtn" layoutX="84.0" layoutY="292.0" mnemonicParsing="false" onAction="#deleteTodo" text="Remove from Favorites" />
+      <Button fx:id="editBtn" layoutX="227.0" layoutY="292.0" mnemonicParsing="false" onAction="#editTodo" text="Edit" />
+      <Label layoutX="55.0" layoutY="38.0" text="Your favorites">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutBtn" layoutX="496.0" layoutY="39.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Button fx:id="backBtn" layoutX="440.0" layoutY="39.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Label fx:id="loggedUserLbl" layoutX="358.0" layoutY="43.0" prefHeight="17.0" prefWidth="61.0" text="Label">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Home">
+   <children>
+      <Label layoutX="50.0" layoutY="32.0" prefHeight="35.0" prefWidth="129.0" text="Your Todo's">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="468.0" layoutY="158.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="83.0" text="Add todo">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="noteRadioButton" layoutX="400.0" layoutY="136.0" mnemonicParsing="false" text="Note">
+         <toggleGroup>
+            <ToggleGroup fx:id="todo" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="listRadioButton" layoutX="400.0" layoutY="165.0" mnemonicParsing="false" text="List" toggleGroup="$todo" />
+      <RadioButton fx:id="taskRadioButton" layoutX="400.0" layoutY="193.0" mnemonicParsing="false" text="Task" toggleGroup="$todo" />
+      <Label layoutX="400.0" layoutY="105.0" text="Add new todo:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="todosTableView" layoutX="50.0" layoutY="93.0" prefHeight="200.0" prefWidth="309.0">
+        <columns>
+          <TableColumn fx:id="titleTblCol" prefWidth="154.0" text="Title" />
+          <TableColumn fx:id="typeTblCol" prefWidth="64.0" text="Type" />
+            <TableColumn fx:id="categoryTblCol" prefWidth="90.0" text="Category" />
+        </columns>
+      </TableView>
+      <Button fx:id="editBtn" layoutX="197.0" layoutY="302.0" mnemonicParsing="false" onAction="#editTodo" prefHeight="25.0" prefWidth="51.0" text="Edit" />
+      <Button fx:id="deleteBtn" layoutX="257.0" layoutY="302.0" mnemonicParsing="false" onAction="#deleteTodo" text="Delete" />
+      <Button fx:id="addToFavoritesBtn" layoutX="86.0" layoutY="302.0" mnemonicParsing="false" onAction="#addToFavorites" text="Add to Favorites" />
+      <Label layoutX="401.0" layoutY="238.0" text="Add new category:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="categoryNameTxt" layoutX="401.0" layoutY="268.0" promptText="category name..." />
+      <Button layoutX="451.0" layoutY="302.0" mnemonicParsing="false" onAction="#addNewCategory" prefHeight="25.0" prefWidth="94.0" text="Add category" />
+      <ComboBox fx:id="optionsComboBox" layoutX="401.0" layoutY="37.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

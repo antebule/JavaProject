@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Categories">
+   <children>
+      <Label layoutX="58.0" layoutY="44.0" text="Your categories">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="categoryListView" layoutX="51.0" layoutY="87.0" prefHeight="200.0" prefWidth="200.0" />
+
+      <Label layoutX="292.0" layoutY="90.0" text="Add new category:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="categoryNameTxt" layoutX="289.0" layoutY="118.0" promptText="category name..." />
+      <Button layoutX="344.0" layoutY="152.0" mnemonicParsing="false" onAction="#addNewCategory" prefHeight="25.0" prefWidth="94.0" text="Add category" />
+      <Button layoutX="126.0" layoutY="295.0" mnemonicParsing="false" onAction="#deleteCategory" text="Delete" />
+      <Button layoutX="450.0" layoutY="19.0" mnemonicParsing="false" onAction="#goToHome" text="Home" />
+      <Button layoutX="518.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+   </children>
+</AnchorPane>
