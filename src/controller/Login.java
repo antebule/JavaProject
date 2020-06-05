@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.User;
 
+import java.io.IOException;
+
 public class Login {
     public static User loggedInUser;
 
@@ -62,5 +64,13 @@ public class Login {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void goToRegister() throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Register.fxml",
+                "Registration", 500, 220
+        );
     }
 }
