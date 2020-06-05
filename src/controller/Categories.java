@@ -34,7 +34,7 @@ public class Categories implements Initializable {
                 System.out.println("You can't delete default category.");
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Dialog with Custom Actions");
+                alert.setTitle("Deleting Category");
                 alert.setHeaderText("Warning! You are about to delete category which will affect all todos with chosen category!!!");
                 alert.setContentText("1) If you choose 'Delete' you will delete all todos with chosen category \n 2) If you choose 'Set Uncategorized' all todos with chosen category will become Uncategorized");
 

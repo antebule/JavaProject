@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="273.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
+   <children>
+      <Label layoutX="208.0" layoutY="32.0" text="Profile details">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="80.0" text="Firstname" />
+      <TextField fx:id="firstnameTxt" layoutX="66.0" layoutY="101.0" prefHeight="25.0" prefWidth="179.0" />
+      <Label layoutX="288.0" layoutY="79.0" text="Lastname" />
+      <TextField fx:id="lastnameTxt" layoutX="288.0" layoutY="101.0" prefHeight="25.0" prefWidth="179.0" />
+      <Label layoutX="66.0" layoutY="142.0" text="Email" />
+      <TextField fx:id="emailTxt" layoutX="66.0" layoutY="162.0" prefHeight="25.0" prefWidth="179.0" />
+      <Label layoutX="290.0" layoutY="144.0" text="Password" />
+      <TextField fx:id="passwordTxt" layoutX="289.0" layoutY="163.0" prefHeight="25.0" prefWidth="179.0" />
+      <Button layoutX="151.0" layoutY="214.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="25.0" prefWidth="96.0" text="Save changes" />
+      <Button layoutX="289.0" layoutY="214.0" mnemonicParsing="false" onAction="#deleteAccount" text="Delete account" />
+      <Button layoutX="441.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="25.0" prefWidth="62.0" text="Home" />
+      <Button layoutX="518.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="62.0" text="Logout" />
+   </children>
+</AnchorPane>

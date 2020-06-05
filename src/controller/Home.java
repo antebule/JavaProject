@@ -216,8 +216,9 @@ public class Home implements Initializable {
                 System.out.println("This todo already exist in favorites");
             } else {
                 // adding selected todo to database if it doesn't already exist
-                PreparedStatement stmt = Database.CONNECTION.prepareStatement("INSERT INTO Favorites (`id`, `todoId`) VALUES (NULL, ?)");
+                PreparedStatement stmt = Database.CONNECTION.prepareStatement("INSERT INTO Favorites (`id`, `todoId`, `userId`) VALUES (NULL, ?, ?)");
                 stmt.setInt(1, this.todosTableView.getSelectionModel().getSelectedItem().getId());
+                stmt.setInt(2, Login.loggedInUser.getId());
                 stmt.executeUpdate();
             }
         } else {
@@ -252,8 +253,18 @@ public class Home implements Initializable {
         );
     }
 
+    public void goToProfile() throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Profile.fxml",
+                "Your Profile", 600, 300
+        );
+    }
+
     public void optionClicked(String option) throws Exception {
-        if(option.equals("Administration")){
+        if(option.equals("Profile")){
+            goToProfile();
+        } else if(option.equals("Administration")){
             goToAdministration();
         } else if(option.equals("Favorites")){
             goToFavorites();
@@ -264,7 +275,7 @@ public class Home implements Initializable {
         }
     }
 
-    private void logout() throws IOException {
+    public void logout() throws IOException {
         Login.loggedInUser = null;
         Main.showWindow(
                 getClass(),

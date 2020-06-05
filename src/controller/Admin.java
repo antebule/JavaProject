@@ -110,7 +110,7 @@ public class Admin implements Initializable {
             // filling table with existing users
             this.usersTableView.getItems().setAll(users);
         } catch (Exception e) {
-            System.out.println("Nismo uspjeli dohvatiti podatke");
+            System.out.println("We failed to get any data");
         }
     }
 

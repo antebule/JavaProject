@@ -60,22 +60,21 @@ public class Favorites implements Initializable {
 
         try {
             // getting all favorites from database
-            String sql = "SELECT * FROM Favorites";
+            String sql = "SELECT * FROM Favorites WHERE userId = ?";
             PreparedStatement query = Database.CONNECTION.prepareStatement(sql);
+            query.setInt(1, Login.loggedInUser.getId());
 
             ResultSet rs = query.executeQuery();
             while(rs.next()){
                 // storing favorites in array like todos
                 Todo todo = (Todo) Todo.get(Todo.class, rs.getInt(2));
-                if(todo.getUserId() == Login.loggedInUser.getId()){
-                    userFavorites.add(todo);
-                }
+                userFavorites.add(todo);
             }
 
             // showing all favorites in table
             this.todosTableView.getItems().setAll(userFavorites);
         } catch (Exception e) {
-            System.out.println("Nismo uspjeli dohvatiti podatke");
+            System.out.println("We failed to get any data");
         }
     }
 
