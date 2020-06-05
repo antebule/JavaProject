@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="273.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Profile">
    <children>
       <Label layoutX="208.0" layoutY="32.0" text="Profile details">
@@ -24,5 +23,8 @@
       <Button layoutX="289.0" layoutY="214.0" mnemonicParsing="false" onAction="#deleteAccount" text="Delete account" />
       <Button layoutX="441.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="25.0" prefWidth="62.0" text="Home" />
       <Button layoutX="518.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="62.0" text="Logout" />
+      <Label fx:id="roleLbl" layoutX="506.0" layoutY="80.0" text="Role" visible="false" />
+      <RadioButton fx:id="userRadioBtn" layoutX="506.0" layoutY="105.0" mnemonicParsing="false" text="User" visible="false" />
+      <RadioButton fx:id="adminRadioBtn" layoutX="506.0" layoutY="136.0" mnemonicParsing="false" text="Admin" visible="false" />
    </children>
 </AnchorPane>

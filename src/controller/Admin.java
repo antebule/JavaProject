@@ -114,7 +114,7 @@ public class Admin implements Initializable {
         }
     }
 
-    public void goBack(ActionEvent ev) throws IOException {
+    public void goToHome(ActionEvent ev) throws IOException {
         Main.showWindow(
                 getClass(),
                 "../view/Home.fxml",
@@ -156,6 +156,16 @@ public class Admin implements Initializable {
         } else {
             System.out.println("Select user to delete it.");
         }
+    }
 
+    public void editUser() throws IOException {
+        if(this.usersTableView.getSelectionModel().getSelectedItem() != null){
+            Profile.userEdit = this.usersTableView.getSelectionModel().getSelectedItem();
+            Main.showWindow(
+                    getClass(),
+                    "../view/Profile.fxml",
+                    "Your Profile", 600, 300
+            );
+        }
     }
 }
